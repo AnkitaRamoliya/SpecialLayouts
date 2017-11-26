@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.oozeetech.bizdesk.widget.DTextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="@dimen/_12sdp"
+        android:text="Add New Item"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_16sdp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_6sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_4sdp">
+
+            <com.oozeetech.bizdesk.widget.DTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rough"
+                android:textSize="@dimen/_16sdp" />
+
+            <Switch
+                android:id="@+id/switchRoughToPolished"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_12sdp" />
+
+            <com.oozeetech.bizdesk.widget.DTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Polished"
+                android:textSize="@dimen/_16sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_4sdp">
+
+            <com.oozeetech.bizdesk.widget.DTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="    $"
+                android:textSize="@dimen/_16sdp" />
+
+            <Switch
+                android:id="@+id/switch$ToINR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_12sdp" />
+
+            <com.oozeetech.bizdesk.widget.DTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INR"
+                android:textSize="@dimen/_16sdp" />
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+
+            <com.oozeetech.bizdesk.widget.DEditText
+                android:id="@+id/edItemName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="Item"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_14sdp" />
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/llRough"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <com.oozeetech.bizdesk.widget.DEditText
+                        android:id="@+id/edWeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:hint="Weight (Crt)"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:padding="@dimen/_8sdp"
+                        android:textSize="@dimen/_14sdp" />
+
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:layout_width="@dimen/_4sdp"
+                    android:layout_height="@dimen/_4sdp" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <com.oozeetech.bizdesk.widget.DEditText
+                        android:id="@+id/edCut"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:hint="Cut"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:padding="@dimen/_8sdp"
+                        android:textSize="@dimen/_14sdp" />
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <com.oozeetech.bizdesk.widget.DEditText
+                        android:id="@+id/edRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:hint="Rate (R/Crt)"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:padding="@dimen/_8sdp"
+                        android:textSize="@dimen/_14sdp" />
+
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:layout_width="@dimen/_4sdp"
+                    android:layout_height="@dimen/_4sdp" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <com.oozeetech.bizdesk.widget.DEditText
+                        android:id="@+id/edPremium"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:hint="Premium (%)"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:padding="@dimen/_8sdp"
+                        android:textSize="@dimen/_14sdp" />
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <com.oozeetech.bizdesk.widget.DTextView
+                        android:id="@+id/txtFinalRate"
+                        style="@style/txt_primary_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:padding="@dimen/_8sdp"
+                        android:text="Final Rate" />
+
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:layout_width="@dimen/_4sdp"
+                    android:layout_height="@dimen/_4sdp" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <com.oozeetech.bizdesk.widget.DTextView
+                        android:id="@+id/txtRghTotalAmount"
+                        style="@style/txt_primary_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:padding="@dimen/_8sdp"
+                        android:text="Total Amount" />
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llPolished"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <com.oozeetech.bizdesk.widget.DEditText
+                        android:id="@+id/edplWeight"
+                        style="@style/txt_txt_primary_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:hint="Weight (Crt)"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:padding="@dimen/_8sdp"
+                        android:textColorHint="@color/primaryText" />
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:layout_width="@dimen/_4sdp"
+                    android:layout_height="@dimen/_4sdp" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <com.oozeetech.bizdesk.widget.DEditText
+                        android:id="@+id/edplRate"
+                        style="@style/txt_txt_primary_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:hint="Rate (₹/Crt)"
+                        android:inputType="numberDecimal"
+                        android:padding="@dimen/_8sdp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/primaryText" />
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <com.oozeetech.bizdesk.widget.DTextView
+                        android:id="@+id/txtplTotalAmt"
+                        style="@style/txt_primary_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:padding="@dimen/_8sdp"
+                        android:singleLine="true"
+                        android:text="0.00" />
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:gravity="center">
+
+            <com.oozeetech.bizdesk.widget.DCheckBox
+                android:id="@+id/ckbIsShipping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Is Shipping?" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvShipPer"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <com.oozeetech.bizdesk.widget.DEditText
+                    android:id="@+id/edPer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="Per"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:padding="@dimen/_8sdp"
+                    android:textSize="@dimen/_14sdp" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llShippingAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.oozeetech.bizdesk.widget.DTextView
+                style="@style/txt_txt_primary_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:text="Total Amount : " />
+
+            <com.oozeetech.bizdesk.widget.DTextView
+                android:id="@+id/txtTotalShipAmt"
+                style="@style/txt_primary_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:text="0.00 " />
+
+            <com.oozeetech.bizdesk.widget.DTextView
+                android:id="@+id/txtType"
+                style="@style/txt_primary_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:text=" ₹ " />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:orientation="horizontal">
+
+            <com.oozeetech.bizdesk.widget.DButtonMaterial
+                android:id="@+id/btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#606060"
+                android:gravity="center"
+                android:padding="@dimen/_6sdp"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16sdp" />
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="@dimen/_2sdp" />
+
+            <com.oozeetech.bizdesk.widget.DButtonMaterial
+                android:id="@+id/btnAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:padding="@dimen/_6sdp"
+                android:text="Add"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16sdp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
